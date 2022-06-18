@@ -15,7 +15,7 @@ div.ex {
 }
 </style>
 <body>
-	<h1>Student Registration Form - himanshu the star</h1>
+	<h1>Student Registration Form - himanshu is boy</h1>
 	<div class="ex">
 		<form action="registrationController" method="post">
 			<table style="with: 50%">
