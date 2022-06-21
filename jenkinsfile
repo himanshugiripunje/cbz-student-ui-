@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage("git clone"){
+            steps{
+             git branch: 'J2EE', url: 'https://github.com/smithgiripunje/onlinebookstore.git'
+            }
+        }
+        stage("maven-build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage("deploy"){
+            steps{
+              deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http//13.233.103.92:8080/')], contextPath: '/', war: '**/*.war'
+            }
+        }
+    }
+}
